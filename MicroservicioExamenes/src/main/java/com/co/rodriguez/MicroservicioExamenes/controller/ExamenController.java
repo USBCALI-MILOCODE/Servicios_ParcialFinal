@@ -16,6 +16,7 @@ import com.rodriguez.common.usuario.models.entity.Examen;
 import com.rodriguez.common.usuario.models.entity.Pregunta;
 
 
+
 @RestController
 public class ExamenController extends CommonController<Examen, ExamenService> {
 

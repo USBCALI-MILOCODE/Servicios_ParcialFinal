@@ -60,14 +60,13 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.co.rodriguez.mdb-spring-boot</groupId>
-			<artifactId>MicroservicioSpringCommons</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
-		<dependency>
 			<groupId>com.rodriguez.common.usuario</groupId>
 			<artifactId>MicroservicioCommonsService</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.co.rodriguez.mdb-spring-boot</groupId>
+			<artifactId>MicroservicioSpringCommons</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
