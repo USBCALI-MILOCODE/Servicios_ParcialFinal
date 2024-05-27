@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,14 +15,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.co.rodriguez.mdbspringboot.MicroservicioSpringCommons.controller.CommonController;
+import com.co.rodriguez.usuarios.MicroservicioUsuarios.configuration.Configuration;
 import com.co.rodriguez.usuarios.MicroservicioUsuarios.service.AlumnoService;
 import com.rodriguez.common.usuario.models.entity.Alumno;
 
 @RestController
 public class AlumnoController extends CommonController<Alumno, AlumnoService> {
 	
+	@Autowired
+    Configuration configuration;
+
 	@Value("${config.balanceador.test}")
 	private String balanceadorTest;
+	
+    @GetMapping("/endpoint")
+    public String retrieveLimits(){
+        return configuration.getValue();
+    }
+
 	
 	@GetMapping("/balanceador-test")
     public ResponseEntity<?> balanceadorTest() {
